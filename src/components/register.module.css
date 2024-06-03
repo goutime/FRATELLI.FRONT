@@ -1,0 +1,30 @@
+.section{
+    padding-top: 50px;
+    padding-bottom: 50px;
+}
+
+.card{
+    max-width: 20%; /* Ancho máximo del 80% */
+    margin: 0 auto; /* Centrar horizontalmente */
+    display: flex; /* Usar flexbox para la distribución interna */
+    flex-direction: column; /* Distribuir elementos en columna */
+    align-items: center; /* Alinear elementos horizontalmente al centro */
+    padding: 20px; /* Añadir relleno alrededor del contenido */
+    background-color: #fff; /* Color de fondo blanco */
+    border-radius: 10px; /* Esquinas redondeadas */
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); /* Sombra sutil */
+}
+
+@media only screen and (max-width: 900px) {
+    .card{
+        max-width: 80%; /* Ancho máximo del 80% */
+        margin: 0 auto; /* Centrar horizontalmente */
+        display: flex; /* Usar flexbox para la distribución interna */
+        flex-direction: column; /* Distribuir elementos en columna */
+        align-items: center; /* Alinear elementos horizontalmente al centro */
+        padding: 20px; /* Añadir relleno alrededor del contenido */
+        background-color: #fff; /* Color de fondo blanco */
+        border-radius: 10px; /* Esquinas redondeadas */
+        box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); /* Sombra sutil */
+    }
+}

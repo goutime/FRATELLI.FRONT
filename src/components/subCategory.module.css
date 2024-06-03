@@ -1,0 +1,54 @@
+
+.caja{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 20px;
+    border: 5px solid #008516; /* Borde gris claro */
+    margin: 0%; /* Espacio entre tarjetas */
+    margin-right: 0%;
+    margin-bottom: 20px;
+    border-radius: 10px; /* Bordes redondeados */
+    width: 100%; /* Ancho completo (responsivo) */
+    box-shadow: 0 5px 10px rgb(0, 0, 0); /* Sombra sutil */
+    text-decoration: none;
+    font-family: sans-serif;
+}
+
+.caja img{
+    width: 100%; /* Ancho completo de la tarjeta */
+    height: auto; /* Altura automática para mantener la proporción */
+    object-fit: cover; /* Ajusta la imagen para cubrir toda el área disponible sin deformarse */
+    display: block; /* Asegura que la imagen se comporte como un bloque */
+    margin: 0; /* Elimina márgenes predeterminados */
+    padding: 0; /* Elimina relleno predeterminado */
+}
+
+.caja h4{
+    color: #ffffff;
+    text-decoration: none;
+    font-family: 'Times New Roman', Times, serif;
+}
+
+.cabezaTitulo{
+    position: relative;
+    background: #ff8800;
+    padding: 10px; /* Margen ajustado para mejor respuesta */
+    padding-left: 100px;
+    padding-right: 100px;
+    margin-bottom: 10px;
+    border-top-left-radius: 50px;
+    border-top-right-radius: 5px;
+    display: flex; /* Diseño Flexbox para alineacion horizontal */
+    align-items: center; /* Alineacion vertical del ti­tulo */
+}
+
+.subCategorias{
+    font-size: 7rem; /* Tamaño de fuente grande */
+    font-weight: bold; /* Letra en negrita */
+    color: rgb(2, 155, 91); /* Letra blanca */
+    text-shadow: 7px 0 black;;
+    padding: 10px; /* Margen interno */
+    margin-bottom: 30px; /* Margen inferior */
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+}
