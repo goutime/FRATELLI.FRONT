@@ -1,8 +1,7 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState } from 'react';
 import axios from 'axios';
 import { getApiUrl } from '../services/apiConfig'
 import cardStyle from "./productCard.module.css";
-//import {searchProductsByName} from '../../../services/product';
 
 function ProductSearch() {
   const [searchTerm, setSearchTerm] = useState('');
@@ -31,7 +30,7 @@ function ProductSearch() {
   };
 
   return (
-    <div className="container my-5">
+    <div>
 
 
       <input type="text"

@@ -8,7 +8,10 @@ import {
 } from "@mui/material";
 import React, { useState, useEffect } from "react";
 import { useNavigate } from "react-router-dom";
+
 import loginStyles from "./login.module.css";
+
+
 import { submitLogin } from "../services/auth";
 import { getAllCategories } from '../services/category'//, getBestProducts
 import Register from "./register"
@@ -27,7 +30,8 @@ function Login() {
   const [subCategory, setSubCategory] = useState({ id: "", name: "", image: "", category: "" })
   const [showProductFeedback, setProductFeedback] = React.useState({ show: false, status: false, infoText: '' })
   const [showProductFeedback2, setProductFeedback2] = React.useState({ show: false, status: false, infoText: '' })
-  const [products, setProducts] = useState([]);
+  //const [products, setProducts] = useState([]);
+
   const [productList, setProductList] = useState([]);
 
 
@@ -91,8 +95,14 @@ function Login() {
 
   return (
     <div className={loginStyles.container}>
-      <div className={loginStyles.sec}>
-        <ProductSearch onSearchSuccess={products} />
+      <div className={loginStyles.sec}>{/*RELACIONADOS AQUI*/}
+        <h1
+          className={loginStyles.nombre}
+        >
+          QUE BUSCAS ?😋:
+
+        </h1>
+        <ProductSearch onSearchSuccess={productList} />
         
         <div className="d-flex justify-content-center align-items-center">
           <h2 className={loginStyles.titulo}>
@@ -102,15 +112,15 @@ function Login() {
 
         <div>
           {roles.length > 1 ?
-            <button className="btn btn-success btn-lg" variant="text"
+            <button className="m-3 btn btn-success btn-lg" variant="text"
               id="button" onClick={handleOpenModal}>
               Añadir nuevo producto
             </button> : null}
         </div>
 
         <div>
-          {roles.length > 1 ? <button className="btn btn-success btn-lg" variant="text"
-            id="button" onClick={handleOpenModal2}>
+          {roles.length > 1 ? <button className="m-3 btn btn-success btn-lg" variant="text"
+            id="button2" onClick={handleOpenModal2}>
             Añadir nueva Sub Categoria
           </button> : null}
         </div>

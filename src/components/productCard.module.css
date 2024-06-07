@@ -67,13 +67,15 @@
 }
 
 .searchbar {
-    width: 100%; /* Ancho completo por defecto */
+    width: 80%; /* Ancho completo por defecto */
     max-width: 600px; /* Ancho máximo para pantallas más grandes */
+    margin-left: 20px;
+    margin-right: 20px;
+    margin-bottom: 20px;
     height: 40px;
-    padding: 10px;
-    border: 1px solid #ccc;
+    border: 5px solid #da7400;
     border-radius: 5px;
-    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+    box-shadow: 0 2px 5px rgb(0, 0, 0);
     font-family: sans-serif;
     font-size: 16px;
     color: #333;

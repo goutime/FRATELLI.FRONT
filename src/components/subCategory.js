@@ -1,6 +1,8 @@
 import React, { useEffect, useState } from "react";
 import { Grid, Typography } from "@mui/material"
+
 import subCategoryStyle from "./subCategory.module.css";
+
 import { useParams } from "react-router-dom";
 import { getSubCategoriesByCategoryName } from '../services/category'
 

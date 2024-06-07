@@ -1,23 +1,22 @@
 import {
   Alert,
   Button,
-  Chip,
   Grid,
   IconButton,
   Badge,
   Snackbar,
   Stack,
-  Typography,
   Modal,
   Box
 } from "@mui/material";
 import React, { useEffect, useState } from "react";
+
 import detailStyle from "./detail.module.css";
+
 import AddIcon from "@mui/icons-material/Add";
 import WhatsAppIcon from '@mui/icons-material/WhatsApp';
 import RemoveIcon from "@mui/icons-material/Remove";
 import ProductCard from "./productCard";
-import ClassIcon from "@mui/icons-material/Class";
 import { useParams } from "react-router-dom";
 import { getProductById, getRelatedProducts } from "../services/product";
 import { getUserDetails } from "../services/auth";
@@ -124,13 +123,10 @@ function Detail() {
 
             </h1>
 
-
-
             <h1
               className={detailStyle.price}>
               {product && product.price.toFixed(0)} CLP
             </h1>
-
 
             <Button target="_blank"
               href="https://wa.me/56986813158/?text=Hola,%20Muy%20buenas%20tardes.%20Le%20hablo%20para%20hacerle%20algunas%20consultas"
@@ -149,7 +145,6 @@ function Detail() {
                 {product && product.description}
               </p>
             </div>
-
 
             <div className={detailStyle.cajaImg}>
               <img
@@ -199,7 +194,7 @@ function Detail() {
               <Button variant="contained" className="btn-lg ol-12 text-center my-1 container btn2"
                 onClick={() => { setOpenPDF(true) }}
                 color="success">
-                Ficha Técnica
+                LUPA
               </Button>
 
 

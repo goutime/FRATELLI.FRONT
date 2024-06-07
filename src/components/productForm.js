@@ -1,4 +1,4 @@
-import { Box, Button, Modal, Stack, TextField, Typography } from '@mui/material'; /* Input */
+import { Box, Button, Modal, Stack, TextField, Typography } from '@mui/material';
 import React, {useEffect} from 'react'
 import { createProduct } from '../services/product'
 import { useState } from "react";
@@ -10,8 +10,7 @@ import {getAllSubCategories} from "../services/category";
 
 function ProductForm(props) {
     const { openModal, setOpenModal, edit, setProductFeedback, setProduct, product, setRefresh } = props;
-    /*const [file, setFile] = useState(null);
-    const [file2, setFile2] = useState(null);*/
+    
     
     const [subCategoryList, setSubCategoryList] = useState([]);
     const [subCategory, setSubCategory] = useState({});

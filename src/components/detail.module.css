@@ -1,5 +1,6 @@
 .cajaImg{
-    width: 40%;
+    max-width: 600px;
+    width: 100%;
 }
 
 .img{

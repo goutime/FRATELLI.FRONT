@@ -1,4 +1,4 @@
-import { Box, Button, Modal, Stack, TextField, Typography } from '@mui/material'; /* Input */
+import { Box, Button, Modal, Stack, TextField, Typography } from '@mui/material';
 import React, {useEffect} from 'react';
 import { createsubCategory } from '../services/category';
 import { useState } from "react";
@@ -30,26 +30,24 @@ function SubCategoryForm(props) {
 
     const handleCloseModal = () => {
         setOpenModal2(false)
-        setSubCategory(edit ? subCategory : { id: "", name: "", image: "", category: ""})
+        setSubCategory(edit ? subCategory : { image: "", name: "", category: ""})
     };
 
-    const saveModalProduct = (event) => {
+    const saveModalSubCategory = (event) => {
         setRefresh(false);
         event.preventDefault();
         
       
         // Utiliza tus funciones para actualizar el producto
-        handleProductForm({ target: { id: 'id', value: subCategory.id } });
-        handleProductForm({ target: { id: 'name', value: subCategory.name } });
         handleProductForm({ target: { id: 'image', value: subCategory.image } });
+        handleProductForm({ target: { id: 'name', value: subCategory.name } });
       
         handleProductCategory({ target: { value: category } });
       
         // Construir el objeto productData
         const subCategoryData = {
-          id: subCategory.id,
-          name: subCategory.name,
-          image: subCategory.image,
+            image: subCategory.image,
+            name: subCategory.name,
           category: category,
           // otros campos del producto si los hay
         };
@@ -83,7 +81,7 @@ function SubCategoryForm(props) {
             aria-labelledby="modal-modal-title"
             aria-describedby="modal-modal-description">
             <Box 
-            onSubmit={saveModalProduct} component="form" sx={{
+            onSubmit={saveModalSubCategory} component="form" sx={{
                 position: 'absolute',
                 top: '50%',
                 left: '50%',
@@ -101,13 +99,12 @@ function SubCategoryForm(props) {
                         {edit ? "Editar subCategoria" : "Nueva sub Categoría"}
                     </Typography>
 
-                    <TextField
+                    <TextField 
                         required
-                        id="id"
-                        label="id"
-                        name="id"
+                        id="image"
+                        label="Imágen"
                         onChange={e => handleProductForm(e)}
-                        value={subCategory.id}
+                        value={subCategory.image}
                     />
 
                     <TextField
@@ -125,7 +122,7 @@ function SubCategoryForm(props) {
                         labelId="demo-simple-select-label"
                         id="category"
                         value={category}
-                        label="Sub Category"
+                        label="Category"
                         input={<OutlinedInput label="Name" />}
                         onChange={e => handleProductCategory(e)}
                     >
@@ -139,19 +136,11 @@ function SubCategoryForm(props) {
                                 )
                                 }
                     </Select>
-
-                    <TextField 
-                        required
-                        id="image"
-                        label="Imágen"
-                        onChange={e => handleProductForm(e)}
-                        value={subCategory.image}
-                    />
                     
 
                     <Button className='btn'
                         variant="contained"
-                        id="button"
+                        id="button2"
                         type="submit">
                         Guardar
                     </Button>
