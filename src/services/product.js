@@ -20,17 +20,19 @@ export const createProduct = async (product) => {
 }
 /*
 
-export const createSubCategory = async (subcategory) => {
+export const createsubCategory = async (subCategory) => {
     const subCategoryUrl = getApiUrl("subcategory");
     console.log(subCategoryUrl);
     console.log(subCategory)
     let formData = new FormData();
     formData.append("subCategory", JSON.stringify(subCategory));
-    const data = await axios.post(subCategoryUrl, formData, { withCredentials: true }).then((v) => v.data);
+    const data = await axios.post(subCategoryUrl, formData, { withCredentials: true }).then((v) => 
+        v.data).catch((error) => {
+        console.error("Error creando subcategoría:", error);
+      });
     console.log(data);
     return data;
 }
-
 
 */
 

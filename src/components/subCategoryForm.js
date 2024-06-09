@@ -1,12 +1,12 @@
 import { Box, Button, Modal, Stack, TextField, Typography } from '@mui/material';
 import React, {useEffect} from 'react';
-import { createsubCategory } from '../services/category';
 import { useState } from "react";
 import InputLabel from '@mui/material/InputLabel';
 import OutlinedInput from '@mui/material/OutlinedInput';
 import Select from '@mui/material/Select';
 import MenuItem from '@mui/material/MenuItem';
 import {getAllCategories} from "../services/category";
+import { createSubCategory } from '../services/category';
 
 function SubCategoryForm(props) {
     const { openModal2, setOpenModal2, edit, setProductFeedback2, setSubCategory, subCategory, setRefresh } = props;
@@ -28,7 +28,7 @@ function SubCategoryForm(props) {
         setCategory(e.target.value);
     }
 
-    const handleCloseModal = () => {
+    const handleCloseModal2 = () => {
         setOpenModal2(false)
         setSubCategory(edit ? subCategory : { image: "", name: "", category: ""})
     };
@@ -40,8 +40,7 @@ function SubCategoryForm(props) {
       
         // Utiliza tus funciones para actualizar el producto
         handleProductForm({ target: { id: 'image', value: subCategory.image } });
-        handleProductForm({ target: { id: 'name', value: subCategory.name } });
-      
+        handleProductForm({ target: { id: 'name', value: subCategory.name } });      
         handleProductCategory({ target: { value: category } });
       
         // Construir el objeto productData
@@ -61,12 +60,12 @@ function SubCategoryForm(props) {
         }
         console.log(subCategoryData);
       
-        createsubCategory(subCategoryData)
+        createSubCategory(subCategoryData)
           .then((response) => {
             console.log(response);
             setSubCategory(subCategoryData);
             setProductFeedback2({ show: true, status: true, infoText: "Guardado" });
-            handleCloseModal();
+            handleCloseModal2();
             setRefresh(true);
           })
           .catch((error) => {
@@ -77,7 +76,7 @@ function SubCategoryForm(props) {
     return (
         <Modal
             open={openModal2}
-            onClose={handleCloseModal}
+            onClose={handleCloseModal2}
             aria-labelledby="modal-modal-title"
             aria-describedby="modal-modal-description">
             <Box 
@@ -140,7 +139,7 @@ function SubCategoryForm(props) {
 
                     <Button className='btn'
                         variant="contained"
-                        id="button2"
+                        id="button"
                         type="submit">
                         Guardar
                     </Button>
@@ -149,7 +148,7 @@ function SubCategoryForm(props) {
                         variant="outlined"
                         id="button"
                         color="error"
-                        onClick={handleCloseModal}>
+                        onClick={handleCloseModal2}>
                         Cancelar
                     </Button>
                 </Stack>

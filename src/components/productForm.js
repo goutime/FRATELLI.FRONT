@@ -1,12 +1,12 @@
 import { Box, Button, Modal, Stack, TextField, Typography } from '@mui/material';
 import React, {useEffect} from 'react'
-import { createProduct } from '../services/product'
 import { useState } from "react";
 import InputLabel from '@mui/material/InputLabel';
 import OutlinedInput from '@mui/material/OutlinedInput';
 import Select from '@mui/material/Select';
 import MenuItem from '@mui/material/MenuItem';
 import {getAllSubCategories} from "../services/category";
+import { createProduct } from '../services/product'
 
 function ProductForm(props) {
     const { openModal, setOpenModal, edit, setProductFeedback, setProduct, product, setRefresh } = props;
@@ -44,8 +44,7 @@ function ProductForm(props) {
         handleProductForm({ target: { id: 'price', value: product.price } });
         handleProductForm({ target: { id: 'description', value: product.description } });
         handleProductForm({ target: { id: 'image', value: product.image } });
-        handleProductForm({ target: { id: 'pdf', value: product.pdf } });
-      
+        handleProductForm({ target: { id: 'pdf', value: product.pdf } });      
         handleProductSubCategory({ target: { value: subCategory } });
       
         // Construir el objeto productData

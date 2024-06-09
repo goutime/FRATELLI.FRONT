@@ -13,13 +13,13 @@ import loginStyles from "./login.module.css";
 
 
 import { submitLogin } from "../services/auth";
-import { getAllCategories } from '../services/category'//, getBestProducts
 import Register from "./register"
 import { getUserDetails } from '../services/auth'
 import ProductForm from './productForm'
 import SubCategoryForm from './subCategoryForm';
 import ProductSearch from './productSearch';
 import { getAllProducts } from '../services/product'
+import { getAllCategories } from '../services/category'
 
 function Login() {
   const [roles, setUserRole] = useState([{}])
@@ -27,7 +27,7 @@ function Login() {
   const [openModal, setOpenModal] = useState(false)
   const [openModal2, setOpenModal2] = useState(false)
   const [product, setProduct] = useState({ name: "", description: "", subCategory: "", image: "" })
-  const [subCategory, setSubCategory] = useState({ id: "", name: "", image: "", category: "" })
+  const [subCategory, setSubCategory] = useState({ image: "", name: "", category: "" })
   const [showProductFeedback, setProductFeedback] = React.useState({ show: false, status: false, infoText: '' })
   const [showProductFeedback2, setProductFeedback2] = React.useState({ show: false, status: false, infoText: '' })
   //const [products, setProducts] = useState([]);
@@ -93,8 +93,17 @@ function Login() {
     setOpen(false);
   };
 
+
+
+
+
+
+
+
   return (
     <div className={loginStyles.container}>
+
+
       <div className={loginStyles.sec}>{/*RELACIONADOS AQUI*/}
         <h1
           className={loginStyles.nombre}
@@ -103,7 +112,7 @@ function Login() {
 
         </h1>
         <ProductSearch onSearchSuccess={productList} />
-        
+
         <div className="d-flex justify-content-center align-items-center">
           <h2 className={loginStyles.titulo}>
             CATEGORIAS
@@ -112,18 +121,35 @@ function Login() {
 
         <div>
           {roles.length > 1 ?
-            <button className="m-3 btn btn-success btn-lg" variant="text"
-              id="button" onClick={handleOpenModal}>
-              Añadir nuevo producto
-            </button> : null}
+            <div>
+              <button className="m-3 btn btn-success btn-lg" variant="text"
+                id="button" onClick={handleOpenModal}>
+                Añadir nuevo producto
+              </button>
+
+              <button className="m-3 btn btn-success btn-lg" variant="text"
+                id="button" onClick={handleOpenModal2}>
+                Añadir nueva Sub Categoria
+              </button>
+
+            </div>
+
+
+
+            : null}
         </div>
 
-        <div>
+        
+        {
+        /*
+          <div>
           {roles.length > 1 ? <button className="m-3 btn btn-success btn-lg" variant="text"
             id="button2" onClick={handleOpenModal2}>
             Añadir nueva Sub Categoria
           </button> : null}
         </div>
+        */
+        }
 
         <Grid className="row">
           {categoryList.map(categoryItem => (
@@ -147,7 +173,11 @@ function Login() {
           ))}
         </Grid>
 
-        <Snackbar open={showProductFeedback.show} autoHideDuration={2000} onClose={closeProductFeedback}
+
+
+
+
+        <Snackbar open={showProductFeedback.show} autoHideDuration={4000} onClose={closeProductFeedback}
           anchorOrigin={{ vertical: 'top', horizontal: 'center' }} >
           <Alert onClose={closeProductFeedback} severity={showProductFeedback.status ? "success" : "error"}
             sx={{ width: '100%' }}>
@@ -160,7 +190,7 @@ function Login() {
           setProduct={setProduct} product={product}
         />
 
-        <Snackbar open={showProductFeedback2.show} autoHideDuration={2000} onClose={closeProductFeedback2}
+        <Snackbar open={showProductFeedback2.show} autoHideDuration={4000} onClose={closeProductFeedback2}
           anchorOrigin={{ vertical: 'top', horizontal: 'center' }} >
           <Alert onClose={closeProductFeedback2} severity={showProductFeedback2.status ? "success" : "error"}
             sx={{ width: '100%' }}>
@@ -171,6 +201,12 @@ function Login() {
         <SubCategoryForm setRefresh={setRefresh} openModal2={openModal2} setOpenModal2={setOpenModal2}
           setProductFeedback2={setProductFeedback2} edit={false}
           setSubCategory={setSubCategory} subCategory={subCategory} />
+
+
+
+
+
+
 
         <Stack
           spacing={2}
@@ -237,6 +273,9 @@ function Login() {
         <Register />
 
       </div>
+
+
+
     </div>
   );
 }
