@@ -16,6 +16,7 @@ function ProductForm(props) {
     const [subCategory, setSubCategory] = useState({});
 
     useEffect(() => {
+        
         getAllSubCategories({ setSubCategoryList })
       }, [])
       

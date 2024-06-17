@@ -17,23 +17,11 @@ import {
     deleteShoppingItem,
     generateSale,
   } from "../services/shoppingCart";
-  /*import axios from "axios";*/
-  
-  /*const style = {
-    position: "absolute",
-    top: "50%",
-    left: "50%",
-    transform: "translate(-50%, -50%)",
-    width: 400,
-    bgcolor: "background.paper",
-    border: "2px solid #000",
-    boxShadow: 24,
-    pt: 2,
-    px: 4,
-    pb: 3,
-  };*/
+  import { Oval } from 'react-loading';
+
   
   function Cart() {
+    const [isLoading, setIsLoading] = useState(false);
     const [productList, setProductList] = useState([]);
     const [/*salesList*/, setSalesList] = useState([]);
     const [open, setOpen] = useState(false);
@@ -75,7 +63,10 @@ import {
     };*/
   
     const confirmSale = () => {
+      setIsLoading(true);
+
       generateSale({setProductList}).then(() => {
+        setIsLoading(false);
         setOpen(true);
         getSales();
         getList();
@@ -118,17 +109,12 @@ import {
   
         <Grid container spacing={1} className={cartStyle.grid}>
           <Grid item xs={12} md={8} justifyContent="center">
-            <div className={cartStyle.title}>
-              <Typography
-                variant="span"
-                ml={2}
-                color={"#000000"}
-                fontSize={40}
-                component="h2"
-                fontWeight={500}
+            <div>
+              <h1
+              className={cartStyle.nombre}
               >
                 Mi carrito
-              </Typography>
+              </h1>
             </div>
   
             <Stack className={cartStyle.cart_container} alignItems="center">
@@ -205,6 +191,8 @@ import {
               ))}
   
               <Divider flexItem />
+                    
+              {isLoading && <Oval color="#3498db" width={50} height={50} />}
   
               <div className={cartStyle.total}>
                 {productList.length ? (
@@ -212,7 +200,6 @@ import {
                     <Typography variant="span" mr={4} fontSize={24} component="h2" fontWeight={700}>
                       Total: ${calculateTotal(productList).toFixed(2)}
                     </Typography>
-                    
                     <Button
                       variant="contained"
                       className="btn2"
@@ -231,7 +218,7 @@ import {
   
         </Grid>
   
-  
+        {/*mostrar un mensaje de notificación temporal en la interfaz de usuario:*/}
         <Snackbar
           open={open}
           autoHideDuration={80000}

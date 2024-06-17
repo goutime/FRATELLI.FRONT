@@ -29,6 +29,7 @@ export const addToCart = ({amountToAdd, productToAdd, setProductFeedback}) => {
         setProductFeedback({
         show: true,
         status: false,
+        // eslint-disable-next-line no-useless-concat
         infoText: "ACCEDE O CREA TU USUARIO" + " AL FINAL DE ESTA PAGINA"
       });
     })

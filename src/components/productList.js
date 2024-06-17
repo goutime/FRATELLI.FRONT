@@ -1,4 +1,4 @@
-import { Alert, Grid, IconButton, Snackbar, Typography } from '@mui/material'
+import { Alert, Grid, Snackbar, Typography } from '@mui/material'
 import React, { useEffect, useState } from 'react'
 import ProductCard from './productCard'
 import AddShoppingCartIcon from '@mui/icons-material/AddShoppingCart';
@@ -102,7 +102,7 @@ function ProductList()
             {productList.map(productItem =>
 
               <Grid onMouseOver={mostrarAvisoa} onMouseOut={ocultarAvisoa}
-              key={productItem.id} className="col-md-4">
+              key={productItem.id} className="col-md-4 col-sm-6" >
               
                       {mostrara && (
                         <div className={productListStyle.alert} role="alert">
@@ -112,13 +112,13 @@ function ProductList()
                       <ProductCard product={productItem} />
                 
 
-                      <IconButton aria-label="add to shopping cart" color='success' 
+                      <button
+                      className={productListStyle.addButton}
                       onClick={() => {
                         addProduct(productItem, 1)
-                        }}
-                        className={productListStyle.add_button}>
+                        }}>
                         <AddShoppingCartIcon />              
-                      </IconButton>
+                      </button>
                 
               </Grid>)
             }

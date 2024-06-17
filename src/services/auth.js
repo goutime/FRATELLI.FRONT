@@ -6,16 +6,17 @@ import axios from 'axios'
 
 
 export const submitLogin = (props) => {
-    const { loginData, setWrongCredentials, navigate, setOpen } = props;
+    const { loginData, setWrongCredentials, setOpen } = props;
     const loginUrl = getApiUrl('auth/login');
 
     axios.post(loginUrl, loginData, { withCredentials: true })
         .then((response) => {
             if (response.status === 200) {
-                navigate('/', { replace: false });
-                window.scrollTo({ top: 0, behavior: 'smooth' });setTimeout(() => {
+                //navigate('/', { replace: false });
+                setTimeout(() => {
                     window.location.reload();
                   }, 500);
+                window.scrollTo({ top: 0, behavior: 'smooth' });
 
 
 

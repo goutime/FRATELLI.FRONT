@@ -1,18 +1,24 @@
-.cajaImg{
+.cajaImg {
     max-width: 600px;
     width: 100%;
 }
 
-.img{
-    width: 100%; /* Ancho completo de la tarjeta */
-    height: auto; /* Altura automática para mantener la proporción */
-    object-fit: cover; /* Ajusta la imagen para cubrir toda el área disponible sin deformarse */
-    display: block; /* Asegura que la imagen se comporte como un bloque */
-    margin: 0; /* Elimina márgenes predeterminados */
-    padding: 0; /* Elimina relleno predeterminado */    
+.img {
+    width: 100%;
+    /* Ancho completo de la tarjeta */
+    height: auto;
+    /* Altura automática para mantener la proporción */
+    object-fit: cover;
+    /* Ajusta la imagen para cubrir toda el área disponible sin deformarse */
+    display: block;
+    /* Asegura que la imagen se comporte como un bloque */
+    margin: 0;
+    /* Elimina márgenes predeterminados */
+    padding: 0;
+    /* Elimina relleno predeterminado */
 }
 
-.info{
+.info {
     background-color: #a1a1a1ad;
     margin-top: 2%;
     height: 100%;
@@ -20,7 +26,7 @@
     border-radius: 100px;
 }
 
-.pe{
+.pe {
     margin-left: 150px;
     margin-right: 150px;
     margin-bottom: 10px;
@@ -29,36 +35,70 @@
     padding-left: 5px;
     padding-right: 5px;
     padding-top: 50px;
-    border-radius: 50px; 
+    border-radius: 50px;
 }
 
-.nombre{
+.nombre {
     margin: 10px;
     padding: 5px;
     background-color: #ffffff7a;
     border-radius: 100px;
     font-family: Arial, Helvetica, sans-serif;
-    font-weight: 700; /* Texto en negrita */
+    font-weight: 700;
+    /* Texto en negrita */
 }
 
-.price{
+.price {
     padding: 5px;
     background-color: #ffffff91;
-    border-radius: 100px; 
+    border-radius: 100px;
     font-family: Arial, Helvetica, sans-serif;
-    font-weight: 700; /* Texto en negrita */
+    font-weight: 700;
+    /* Texto en negrita */
 }
 
-.pe p{
+.pe p {
     font-family: Arial, Helvetica, sans-serif;
-    font-weight: 500; /* Texto en negrita */
+    font-weight: 900;
+    /* Texto en negrita */
 }
 
-.titulo2{
-    font-size: 7rem; /* Tamaño de fuente grande */
-    font-weight: bold; /* Letra en negrita */
-    color: rgb(60, 165, 0); /* Letra blanca */
-    text-shadow: 7px 0 black;;
-    padding: 10px; /* Margen interno */
-    margin-bottom: -30px; /* Margen inferior */
-  }
+.titulo2 {
+    font-size: 7rem;
+    /* Tamaño de fuente grande */
+    font-weight: bold;
+    /* Letra en negrita */
+    color: rgb(60, 165, 0);
+    /* Letra blanca */
+    text-shadow: 7px 0 black;
+    ;
+    padding: 10px;
+    /* Margen interno */
+    margin-bottom: -30px;
+    /* Margen inferior */
+}
+
+
+@media only screen and (max-width: 900px) {
+    body {
+        zoom: 0.5;
+    }
+
+    .pe {
+        margin-left: 30px;
+        margin-right: 30px;
+        margin-bottom: 10px;
+        background-color: #ffffff;
+        margin-top: 2%;
+        padding-left: 5px;
+        padding-right: 5px;
+        padding-top: 50px;
+        border-radius: 50px;
+    }
+
+    .pe p {
+        font-family: Arial, Helvetica, sans-serif;
+        font-weight: 900;
+        /* Texto en negrita */
+    }
+}

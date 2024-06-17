@@ -30,7 +30,7 @@ function SubCategoryForm(props) {
 
     const handleCloseModal2 = () => {
         setOpenModal2(false)
-        setSubCategory(edit ? subCategory : { image: "", name: "", category: ""})
+        setSubCategory(edit ? subCategory : { id: "", image: "", name: "", category: ""})
     };
 
     const saveModalSubCategory = (event) => {
@@ -39,12 +39,14 @@ function SubCategoryForm(props) {
         
       
         // Utiliza tus funciones para actualizar el producto
+        handleProductForm({ target: { id: 'id', value: subCategory.id } });
         handleProductForm({ target: { id: 'image', value: subCategory.image } });
         handleProductForm({ target: { id: 'name', value: subCategory.name } });      
         handleProductCategory({ target: { value: category } });
       
         // Construir el objeto productData
         const subCategoryData = {
+            id: subCategory.id,
             image: subCategory.image,
             name: subCategory.name,
           category: category,
@@ -97,6 +99,14 @@ function SubCategoryForm(props) {
                     <Typography id="modal-modal-title" variant="h6" component="h2">
                         {edit ? "Editar subCategoria" : "Nueva sub Categoría"}
                     </Typography>
+
+                    <TextField 
+                        required
+                        id="id"
+                        label="id"
+                        onChange={e => handleProductForm(e)}
+                        value={subCategory.id}
+                    />
 
                     <TextField 
                         required

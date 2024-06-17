@@ -2,3 +2,10 @@ body
 {    
     zoom: 0.8;
 }
+
+@media only screen and (max-width: 900px) {
+    body
+    {    
+        zoom: 0.5;
+    }
+}

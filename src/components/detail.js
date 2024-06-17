@@ -227,6 +227,9 @@ function Detail() {
                     className="container"
                   />
                 </Box>
+
+                {/*AQUI VAN LOS AGREGADOS*/}
+
               </Modal>
 
               <br></br>
@@ -243,6 +246,8 @@ function Detail() {
               </Button>
 
             </div>
+
+            
 
           </Stack>
 

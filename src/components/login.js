@@ -7,7 +7,7 @@ import {
   Typography,
 } from "@mui/material";
 import React, { useState, useEffect } from "react";
-import { useNavigate } from "react-router-dom";
+//import { useNavigate } from "react-router-dom";
 
 import loginStyles from "./login.module.css";
 
@@ -67,7 +67,7 @@ function Login() {
 
 
 
-  var navigate = useNavigate();
+  //var navigate = useNavigate();
 
   const [loginData, setLoginData] = useState({ userName: "", password: "" });
   const [wrongCredentials, setWrongCredentials] = useState({
@@ -139,16 +139,16 @@ function Login() {
             : null}
         </div>
 
-        
+
         {
-        /*
-          <div>
-          {roles.length > 1 ? <button className="m-3 btn btn-success btn-lg" variant="text"
-            id="button2" onClick={handleOpenModal2}>
-            Añadir nueva Sub Categoria
-          </button> : null}
-        </div>
-        */
+          /*
+            <div>
+            {roles.length > 1 ? <button className="m-3 btn btn-success btn-lg" variant="text"
+              id="button2" onClick={handleOpenModal2}>
+              Añadir nueva Sub Categoria
+            </button> : null}
+          </div>
+          */
         }
 
         <Grid className="row">
@@ -185,11 +185,6 @@ function Login() {
           </Alert>
         </Snackbar>
 
-        <ProductForm setRefresh={setRefresh} openModal={openModal} setOpenModal={setOpenModal}
-          setProductFeedback={setProductFeedback} edit={false}
-          setProduct={setProduct} product={product}
-        />
-
         <Snackbar open={showProductFeedback2.show} autoHideDuration={4000} onClose={closeProductFeedback2}
           anchorOrigin={{ vertical: 'top', horizontal: 'center' }} >
           <Alert onClose={closeProductFeedback2} severity={showProductFeedback2.status ? "success" : "error"}
@@ -197,6 +192,11 @@ function Login() {
             {showProductFeedback2.infoText}
           </Alert>
         </Snackbar>
+
+        <ProductForm setRefresh={setRefresh} openModal={openModal} setOpenModal={setOpenModal}
+          setProductFeedback={setProductFeedback} edit={false}
+          setProduct={setProduct} product={product}
+        />
 
         <SubCategoryForm setRefresh={setRefresh} openModal2={openModal2} setOpenModal2={setOpenModal2}
           setProductFeedback2={setProductFeedback2} edit={false}
@@ -245,7 +245,6 @@ function Login() {
               submitLogin({
                 loginData,
                 setWrongCredentials,
-                navigate,
                 setOpen,
               });
             }}

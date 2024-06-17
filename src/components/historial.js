@@ -104,17 +104,12 @@ import {
 
           <Grid item xs={12} md={8} justifyContent="center">
             
-            <div className={cartStyle.title}>
-              <Typography
-                variant="span"
-                ml={2}
-                color={"#000000"}
-                fontSize={40}
-                component="h2"
-                fontWeight={500}
+            <div>
+              <h1
+               className={cartStyle.nombre}  
               >
                 Mis Ordenes De Compra
-              </Typography>
+              </h1>
             </div>
   
             <Stack className={cartStyle.cart_container} alignItems="center">
@@ -183,6 +178,20 @@ import {
                 </Table>
                 </TableContainer>
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
                     <Modal
                     open={openDetail}
                     onClose={() => {
@@ -192,51 +201,94 @@ import {
                     aria-describedby="modal-modal-description"
                     >
 
+
+
+
+
+
+
                     <Box sx={style}>
                         <Stack
                         className={cartStyle.cart_container}
-                        alignItems="center"
                         >
                         {details.map((item) => (
                             <React.Fragment key={item.id}>
+
+
                             <Grid
-                                container
                                 spacing={2}
-                                mt={1}
-                                mb={1}
+                                mt={3}
+                                mb={3}
                                 justifyContent="center"
                                 alignItems={"center"}
                             >
-                                <Grid item xs={6} md={3}>
-                                <Typography
-                                    variant="span"
-                                    fontSize={20}
-                                    component="h2"
-                                    fontWeight={500}
-                                >
-                                    {item.product.name}
-                                </Typography>
-                                </Grid>
                                 <Grid item xs={2} md={2}>
                                 <Typography
                                     variant="span"
                                     fontSize={20}
-                                    component="h2"
+                                    component="h5"
                                     fontWeight={500}
                                 >
                                     {item.amount}
                                 </Typography>
                                 </Grid>
+
+                                <Grid item xs={2} md={2}>
+                                <Typography
+                                    variant="span"
+                                    fontSize={20}
+                                    component="h5"
+                                    fontWeight={500}
+                                >
+                                {item.product.name}
+                                </Typography>
+                                </Grid>
+
+                                <Grid item xs={2} md={2}>
+                                <Typography variant="span" fontSize={20} component="h5" fontWeight={500}>
+                                    ${item.product.price}
+                                </Typography>
+                                </Grid>
                             </Grid>
 
                             <Divider flexItem />
+
+
                             </React.Fragment>
                         ))}
 
                         </Stack>
                     </Box>
 
+
+
+
+
+
+
+
+
+
                     </Modal>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
   
             </Stack>
           </Grid>
