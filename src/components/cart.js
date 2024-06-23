@@ -17,11 +17,11 @@ import {
     deleteShoppingItem,
     generateSale,
   } from "../services/shoppingCart";
-  import { Oval } from 'react-loading';
+  //import { Oval } from 'react-loading';
 
   
   function Cart() {
-    const [isLoading, setIsLoading] = useState(false);
+    //const [isLoading, setIsLoading] = useState(false);
     const [productList, setProductList] = useState([]);
     const [/*salesList*/, setSalesList] = useState([]);
     const [open, setOpen] = useState(false);
@@ -63,10 +63,10 @@ import {
     };*/
   
     const confirmSale = () => {
-      setIsLoading(true);
+      //setIsLoading(true);
 
       generateSale({setProductList}).then(() => {
-        setIsLoading(false);
+        //setIsLoading(false);
         setOpen(true);
         getSales();
         getList();
@@ -191,8 +191,6 @@ import {
               ))}
   
               <Divider flexItem />
-                    
-              {isLoading && <Oval color="#3498db" width={50} height={50} />}
   
               <div className={cartStyle.total}>
                 {productList.length ? (
