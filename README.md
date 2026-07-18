@@ -1,6 +1,4 @@
-## Versión 1: Español Chileno
-
-**App Fratelli – Frontend**
+## App Fratelli – Frontend**
 
 Frontend moderno en React que consume una API REST. Enfocado en una interfaz limpia, componentes reutilizables y una separación clara entre la presentación y el acceso a datos.
 
