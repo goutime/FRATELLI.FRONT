@@ -1,4 +1,4 @@
-## App Fratelli – Frontend**
+## App Fratelli – Frontend
 
 Frontend moderno en React que consume una API REST. Enfocado en una interfaz limpia, componentes reutilizables y una separación clara entre la presentación y el acceso a datos.
 
@@ -117,4 +117,3 @@ src/
 Gonzalo Rodríguez – Software Developer | Frontend & Backend
 
 - Email: gnrd.developer@gmail.com
-- GitHub | LinkedIn
